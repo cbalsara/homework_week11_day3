@@ -6,18 +6,15 @@ makeRequest(url, requestComplete);
 }
 
 var makeRequest = function(url, callback){
-
 var request = new XMLHttpRequest();
-
 request.open("GET", url);
-
 request.onload = callback;
-
 request.send();
 }
 
 var requestComplete = function(){
-console.log("should appear");
+if(this.status !== 200) return;
+console.log("should appear if url correct")
 
 
 }
