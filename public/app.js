@@ -31,11 +31,19 @@ var populateList = function(albums){
     var href = album.external_urls.spotify;
     var link = document.createElement('a');
       link.href = href; 
-      link.innerText = album.name;
+      link.innerText = "Click to get: " + album.name + " at Spotify!"
+    var src = album.images[0].url;
+    var picture = document.createElement('img');
+    picture.src = src;
+    link.img = album.images[0].url;
+    console.log(src);
+    newAlbum.appendChild(picture);
     newAlbum.appendChild(item);
     newAlbum.appendChild(link);
+
+
     }
-  };
+};
 
 // make each title link to the album in Spotify
 
