@@ -23,14 +23,25 @@ populateList(albums);
 
 var populateList = function(albums){
   var newAlbum = document.getElementById('albums');
- console.log(albums);
- for(album of albums.albums.items){
-  var li1 = document.createElement("li");
-  li1.innerText = album.name;
-  console.log(li1);
-newAlbum.appendChild(li1)
-}
-};
+  console.log(albums);
+  for(album of albums.albums.items){
+    var item = document.createElement("li");
+    item.innerText = album.name;
+    console.log(item);
+    var href = album.external_urls.spotify;
+    var link = document.createElement('a');
+      link.href = href; 
+      link.innerText = album.name;
+    newAlbum.appendChild(item);
+    newAlbum.appendChild(link);
+    }
+  };
+
+// make each title link to the album in Spotify
+
+
+
+
 
 
 
